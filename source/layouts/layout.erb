@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    
+    <!-- Sets the viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "FALLBACK" %></title>
+    
+    <!-- Pick the meta tags from the YAML frontmatter -->
+    <link rel="alternate" hreflang="nl-nl" href="http://URL.nl<%= current_page.url %>" />
+    <meta name="description" content="<%= current_page.data.description %>">
+    <meta name="author" content="<%= current_page.data.author || "FALLBACK" %>">
+    <meta name="keywords" content="<%= current_page.data.keywords %>">
+    
+    <!-- Schema.org markup for Google Plus -->
+    <meta itemprop="name" content="<%= current_page.data.title %>">
+    <meta itemprop="description" content="<%= current_page.data.description %>">
+    <meta itemprop="image" content="/images/path/to/">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kvkooten">
+    <meta name="twitter:title" content="<%= current_page.data.title || "FALLBACK" %>">
+    <meta name="twitter:description" content="<%= current_page.data.description %>">
+    <meta name="twitter:creator" content="@kvkooten">
+    <meta name="twitter:image:src" content="/images/path/to/">
+    
+    <!-- Open Graph data -->
+    <meta property="og:title" content="<%= current_page.data.title || "FALLBACK" %>" />
+    <!--<meta property="og:type" content="article" />-->
+    <meta property="og:url" content="http://URL.nl<%= current_page.url %>" />
+
+    <meta property="og:image" content="/images/path/to/">
+    <meta property="og:description" content="<%= current_page.data.description %>" />
+    <meta property="og:site_name" content="SITE NAME" />
+    <!--<meta property="fb:admins" content="266497076803460" />-->
+
+    <!-- Google Fonts -->
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <!-- JavaScript & CSS -->
+    <%= stylesheet_link_tag 'all' %>
+    <%= javascript_include_tag 'all' %>
+    
+    <!-- Icons -->
+    
+    <!-- Google Analytics -->
+
+  </head>
+
+  <body>  
+    <main class="content">
+      <%= yield %>
+    </main>
+  </body>
+  
+</html>
