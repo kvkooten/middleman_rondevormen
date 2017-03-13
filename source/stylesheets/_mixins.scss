@@ -1,3 +1,4 @@
+// GRADIENTS
 @mixin linear-gradient($direction, $color-stops...) {
   // Direction has been omitted and happens to be a color-stop
   @if is-direction($direction) == false {
@@ -44,6 +45,8 @@
   @return 90deg - $value;
 }
 
+
+// SELECTION
 @mixin selection {
   ::-webkit-selection { @content; }
   ::-moz-selection { @content; }
@@ -52,6 +55,8 @@
   ::selection { @content; }
 }
 
+
+// DASH
 @mixin dash {
   &:after {
     display: block;
@@ -60,11 +65,15 @@
   }
 }
 
+
+// CALC
 @mixin calc($property, $expression) {
   #{$property}: -webkit-calc(#{$expression}); 
   #{$property}: calc(#{$expression}); 
 }
 
+
+// BACKGROUND
 @mixin background($position: 50%, $size: cover, $attachment: scroll, $repeat: no-repeat) {
   background: {
     position: $position;
@@ -74,6 +83,8 @@
   }
 }
 
+
+// ANIMATE
 @mixin animate($name: fadein, $duration: 1s, $delay: 0s) {
   -webkit-animation: {
     name: $name;
@@ -87,40 +98,19 @@
   }
 }
 
-//.usage-tester {
-//    @include background('http://placehold.it/1000x1000', fixed, 50% 50%, repeat-x);
-//}
 
-/* Breakpoints */
+// BREAKPOINTS
+@mixin xs-max { @media (max-width: #{$screen-xs-max}) { @content; } }
 
-@mixin xs-max {
-  @media (max-width: #{$screen-xs-max}) { @content; }
-}
+@mixin sm-min { @media (min-width: #{$screen-xs-min}) { @content; } }
+@mixin sm-max { @media (max-width: #{$screen-xs-max}) { @content; } }
 
-@mixin sm-min {
-  @media (min-width: #{$screen-xs-min}) { @content; }
-}
-@mixin sm-max {
-  @media (max-width: #{$screen-xs-max}) { @content; }
-}
+@mixin md-min { @media (min-width: #{$screen-md-min}) { @content; } }
+@mixin md-max { @media (max-width: #{$screen-md-max}) { @content; } }
 
-@mixin md-min {
-  @media (min-width: #{$screen-md-min}) { @content; }
-}
-@mixin md-max {
-  @media (max-width: #{$screen-md-max}) { @content; }
-}
+@mixin lg-min { @media (min-width: #{$screen-lg-min}) { @content; } }
 
-@mixin lg-min {
-  @media (min-width: #{$screen-lg-min}) { @content; }
-}
 
-/* Screen orientation */
-
-@mixin portrait {
-  @media (orientation: #{portrait}) { @content; }
-}
-
-@mixin landscape {
-  @media (orientation: #{landscape}) { @content; }
-}
+// SCREEN ORIENTATION
+@mixin portrait { @media (orientation: #{portrait}) { @content; } }
+@mixin landscape { @media (orientation: #{landscape}) { @content; } }
