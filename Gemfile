@@ -31,3 +31,10 @@ gem 'middleman-php'
 
 # haml
 gem 'haml'
+
+# autoprefixer
+gem 'middleman-autoprefixer', '~> 2.8.0'
+
+#gem 'builder'
+
+gem 'middleman-sitemap-xml-generator', '~> 1.0'

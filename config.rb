@@ -70,6 +70,13 @@ configure :build do
   activate :relative_assets
 end
 
+# Activate sitemap
+
+#set :url_root, 'https://ronde-vormen.nl'
+#activate :sitemap_xml_generator do |f|
+#  f.exclude_attr = 'noindex'
+#end
+
 case ENV['TARGET'].to_s.downcase
 when 'production'
   activate :deploy do |deploy|
